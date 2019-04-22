@@ -1,0 +1,31 @@
+<form (ngSubmit) = "f.form.valid && cantidad > 0  && onAnadirPresupuesto()" #f="ngForm" >
+    <div class="agregar">
+        <div class="agregar_contenedor">    
+            <select [ngClass]="{redfocus: tipo == '-'}"
+            class="agregar_tipo" [(ngModel)]="tipo" name="tipo">
+                <option value="+" selected>+</option>
+                <option value="-">-</option>
+            </select>
+            <input 
+            [ngClass]="{redfocus: tipo == '-'}"
+            type="text"
+            class="agregar_descripcion" 
+            placeholder="Agregar Descripción"
+            [(ngModel)]="nombre" 
+            name="nombre"
+            required>
+            <input 
+            [ngClass]="{redfocus: tipo == '-'}"
+            type="number" 
+            class="agregar_valor" 
+            placeholder="Valor"
+            [(ngModel)]="cantidad" 
+            name="cantidad"
+            required>
+            <button class="agregar_btn" type="submit">
+                <i [ngClass]="{red: tipo == '-'}"
+                class="ion-ios-checkmark-outline"></i>
+            </button>
+        </div>
+    </div>
+</form>

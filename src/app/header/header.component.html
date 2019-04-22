@@ -1,0 +1,21 @@
+<div class="presupuesto_titulo">
+  Presupuesto Disponible:
+</div>
+
+<div class="presupuesto_valor">+ {{ montoIngresos - montoEgresos | currency: 'USD':true:'.2'}}</div>
+
+<div class="presupuesto_ingreso limpiarEstilos">
+  <div class="presupuesto_ingreso--texto">Ingresos</div>
+  <div class="right">
+      <div class="presupuesto_ingreso--valor">+ {{montoIngresos | currency:'USD':true:'.2'}}</div>
+      <div class="presupuesto_ingreso--porcentaje">&nbsp;</div>
+  </div>
+</div>
+
+<div class="presupuesto_egreso limpiarEstilos">
+  <div class="presupuesto_egreso--text">Egresos</div>
+  <div class="right limpiarEstilos">
+      <div class="presupuesto_egreso--valor">- {{montoEgresos | currency:'USD':true:'.2'}}</div>
+      <div class="presupuesto_egreso--porcentaje">{{ montoEgresos/montoIngresos | percent:'1.0'}}</div>
+  </div>
+</div>

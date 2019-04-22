@@ -1,0 +1,26 @@
+<div class="cabecero">
+  <div class="presupuesto">
+      <app-header></app-header>
+  </div>
+</div>
+<app-formulario></app-formulario>
+  <div class="contenedor limpiarEstilos">
+      <div class="ingreso">
+            <h2 class="ingreso_titulo">Ingresos</h2>
+            <app-ingresos
+            *ngFor="let presupuesto of presupuestoIngresos; let i = index"
+            [presupuestoIngreso]="presupuesto"
+            [indice]="i"></app-ingresos>
+      </div>
+      
+      
+      
+      <div class="egreso">
+            <h2 class="egreso_titulo">Egresos</h2>
+            <app-egresos
+            *ngFor="let presupuesto of presupuestoEgresos; let i = index"
+            [presupuestoEgreso]="presupuesto"
+            [indice]="i"
+            [montoIngresos]="montoIngresos"></app-egresos>
+      </div>
+  </div>
